@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Document Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>Low Resolution Face Recognition</header>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#ANN">ANN</a>
+        <a class="nav-link" href="#CNN">CNN</a>
+        <a class="nav-link" href="#ViT">ViT</a>
+        <a class="nav-link" href="#Integration_of_Vision_Transformers_and_CNN_for_Low-Resolution_Face_Recognition">
+            Integration of Vision Transformers and CNN for Low-Resolution Face Recognition
+        </a>
+        <a class="nav-link" href="#Conclusion">Conclusion</a>
+    </nav>
+
+    <main id="main-doc">
+
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>Face recognition is a biometric technology that identifies or verifies individuals using their facial features.</p>
+            <p>Low-resolution face recognition poses significant challenges due to missing fine details and blurry features, requiring advanced techniques for accurate identification.</p>
+            <p>Example: <code>face_detect(image)</code></p>
+        </section>
+
+        <section class="main-section" id="ANN">
+            <header>ANN</header>
+            <p>Artificial Neural Networks (ANN) are inspired by biological neurons and can approximate complex functions through layers of interconnected nodes.</p>
+            <p>ANNs are used in feature extraction by learning patterns and relationships between inputs and outputs without manual feature engineering. Example: <code>model.compile(optimizer='adam')</code></p>
+            <pre><code>model = Sequential()
+model.add(Dense(128, input_shape=(64,), activation='relu'))</code></pre>
+
+            <p>ANN Architecture Components:</p>
+            <ul>
+                <li>Input Layer</li>
+                <li>Hidden Layers</li>
+                <li>Output Layer</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="CNN">
+            <header>CNN</header>
+            <p>Convolutional Neural Networks (CNN) are highly effective for image-based tasks because they can automatically capture spatial hierarchies of patterns.</p>
+            <p>CNNs use convolutional layers to detect edges, textures, and object parts in images, followed by pooling and dense layers for classification. Example: <code>image = preprocess(image)</code></p>
+            <pre><code>
+model.add(Conv2D(32, (3, 3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+</code></pre>
+            <p>Common CNN Layers:</p>
+            <ul>
+                <li>Convolution Layer</li>
+                <li>Pooling Layer</li>
+                <li>Flatten Layer</li>
+                <li>Fully Connected Layer</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="ViT">
+            <header>ViT</header>
+            <p>Vision Transformers (ViT) apply transformer architecture directly to image patches, capturing long-range dependencies better than CNNs for certain tasks.</p>
+            <p>ViTs divide images into patches, embed them, and pass them through multiple self-attention layers for feature extraction. Example: <code>patches = create_patches(image)</code></p>
+            <pre><code>
+patches = extract_patches(image)
+transformer_output = transformer(patches)
+</code></pre>
+            <p>ViT Components:</p>
+            <ul>
+                <li>Patch Embedding</li>
+                <li>Positional Encoding</li>
+                <li>Multi-Head Attention</li>
+                <li>Feed Forward Network</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Integration_of_Vision_Transformers_and_CNN_for_Low-Resolution_Face_Recognition">
+            <header>Integration of Vision Transformers and CNN for Low-Resolution Face Recognition</header>
+            <p>Combining Vision Transformers (ViT) with Convolutional Neural Networks (CNN) creates a hybrid model that leverages both local feature extraction and global contextual understanding, improving face recognition even on low-resolution images. Example: <code>final_output = model(image)</code></p>
+            <pre><code>
+features_cnn = cnn_model(image)
+features_vit = vit_model(image)
+final_output = merge(features_cnn, features_vit)
+</code></pre>
+
+            <p>Advantages of the Hybrid Model:</p>
+            <ul>
+                <li>Efficient local feature extraction (CNN)</li>
+                <li>Global relational modeling (ViT)</li>
+                <li>Better generalization on low-resolution face datasets</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Conclusion">
+            <header>Conclusion</header>
+            <p>Low-resolution face recognition remains a challenging problem, but hybrid models like ViT+CNN show promising results by combining the strengths of both architectures.</p>
+        </section>
+
+    </main>
+</body>
+
+</html>

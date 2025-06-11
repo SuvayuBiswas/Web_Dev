@@ -1,0 +1,149 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e5e2dd;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+#image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#img-div {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#img-caption {
+    font-style: italic;
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+#timeline {
+    margin-top: 30px;
+}
+
+#timeline h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#timeline ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#timeline li {
+    background: #f0f0f0;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-left: 5px solid #888;
+    border-radius: 4px;
+}
+
+#quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #444;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#quote span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #666;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+#bio {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    text-align: justify;
+    color: #444;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+#bio strong {
+    font-weight: 600;
+    color: #19304d;
+}
+
+#bio em {
+    font-style: italic;
+    color: #555;
+}
+
+.wiki-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+
+.wiki-link:hover {
+    color: #8e44ad;
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 20px;
+    }
+
+    #title {
+        font-size: 2rem;
+    }
+
+    #timeline h2 {
+        font-size: 1.4rem;
+    }
+
+    #bio,
+    #tribute-info {
+        font-size: 1rem;
+        padding: 0;
+    }
+}

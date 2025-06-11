@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="title">Mess Survey</h1>
+    <p id="description">Your review will help us improve</p>
+    <form id="survey-form" method="post">
+        <label id="name-label" for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <label id="email-label" for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your Email" required>
+        <label id="number-label" for="number">Age</label>
+        <input type="number" id="number" min="0" max="100" placeholder="Enter your age">
+        <label for="dropdown">Your diet :</label>
+        <select id="dropdown">
+            <option>Veg</option>
+            <option>Non-Veg</option>
+            <option>Both</option>
+        </select>
+        <label>Complaints :</label>
+        <div class="checkbox-group">
+            <input type="checkbox" id="check1" name="complaints" value="quality"> Poor quality of food.<br />
+            <input type="checkbox" id="check2" name="complaints" value="water"> Water smells funny.<br />
+            <input type="checkbox" id="check3" name="complaints" value="quantity"> Quantity of food served is
+            less.<br />
+            <input type="checkbox" id="check4" name="complaints" value="ventilation"> Mess ventilation issue.<br />
+            <input type="checkbox" id="check5" name="complaints" value="hygiene"> Tableware not cleaned properly.<br />
+            <input type="checkbox" id="check6" name="complaints" value="menu"> Takes forever to change menu.<br />
+            <input type="checkbox" id="check7" name="complaints" value="fruits"> Fruits not fresh.<br />
+            <input type="checkbox" id="check8" name="complaints" value="other" id="check-other"> Other<br />
+        </div>
+        <div id="other-complaint-container" style="display:none; margin-top: 5px;">
+            <input type="text" id="other-complaint" placeholder="Please specify your complaint">
+        </div>
+        <label>Rate KIIT Mess Staffs :</label>
+        <input type="radio" id="radio1" name="rating" value="bad"> Poor<br />
+        <input type="radio" id="radio2" name="rating" value="average"> Not Bad<br />
+        <input type="radio" id="radio3" name="rating" value="good"> Friendly<br />
+        <input type="radio" id="radio4" name="rating" value="excellent"> Very Friendly<br />
+        <label for="feedback">Any additional feedback (optional):</label>
+        <textarea id="feedback" name="feedback" rows="4" cols="50"
+            placeholder="Write your suggestions or comments here..."></textarea>
+        <br /><br />
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    <script>
+        const otherCheckbox = document.querySelector('input[value="other"]');
+        const otherInputContainer = document.getElementById('other-complaint-container');
+
+        otherCheckbox.addEventListener('change', () => {
+            if (otherCheckbox.checked) {
+                otherInputContainer.style.display = 'block';
+            } else {
+                otherInputContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
