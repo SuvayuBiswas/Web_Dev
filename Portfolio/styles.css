@@ -1,0 +1,310 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #34495e 0%, #3b4b64 100%);
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav#navbar {
+  background: rgba(44, 62, 80, 0.98);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  transition: background 0.3s;
+}
+
+nav#navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 0.3rem 0.7rem;
+  transition: color 0.2s;
+}
+
+nav#navbar a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #e67e22;
+  transition: width 0.3s;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+nav#navbar a:hover, nav#navbar a:focus {
+  color: #e67e22;
+}
+nav#navbar a:hover::after, nav#navbar a:focus::after {
+  width: 100%;
+}
+
+/* Welcome Section */
+#welcome-section {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 1rem 1rem;
+  text-align: center;
+  background: transparent;
+}
+
+#welcome-section h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(44,62,80,0.18);
+}
+
+#welcome-section p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  max-width: 700px;
+  color: #d6e0f0;
+}
+
+/* Projects Section */
+#projects {
+  padding: 6rem 2rem 3rem;
+  background: linear-gradient(135deg, #3b4b64 60%, #34495e 100%);
+  text-align: center;
+}
+
+#projects h1 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+}
+
+.project-tile {
+  background: #222f3e;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(44,62,80,0.25);
+  transition: transform 0.25s cubic-bezier(.4,2,.3,1), box-shadow 0.25s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.project-tile:hover, .project-tile:focus-within {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(44,62,80,0.28);
+}
+
+.project-tile img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s;
+  filter: brightness(0.92) contrast(1.08);
+}
+
+.project-tile:hover img, .project-tile:focus-within img {
+  filter: brightness(1.02) contrast(1.15) blur(1px);
+}
+
+.project-tile a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: none;
+}
+
+.project-tile p {
+  padding: 1.2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #e67e22 0%, #c0392b 100%);
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.5px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.project-tile a:hover p, .project-tile a:focus p {
+  background: linear-gradient(90deg, #c0392b 0%, #e67e22 100%);
+  color: #fff;
+}
+
+/* Add overlay effect on hover */
+.project-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(230,126,34,0.25) 50%, rgba(192,57,43,0.18) 100%);
+  opacity: 0;
+  transition: opacity 0.25s;
+  z-index: 1;
+}
+.project-tile:hover::before, .project-tile:focus-within::before {
+  opacity: 1;
+}
+
+/* Contact Section */
+#contact {
+  background: #222f3e;
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+}
+
+#contact h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-links a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0.9rem 2.2rem;
+  background: linear-gradient(90deg, #c0392b 0%, #e67e22 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 12px rgba(44,62,80,0.08);
+  transition: background 0.3s, transform 0.22s, box-shadow 0.22s;
+  position: relative;
+}
+
+.contact-links a:hover, .contact-links a:focus {
+  background: linear-gradient(90deg, #e67e22 0%, #c0392b 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 18px rgba(230,126,34,0.18);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  #welcome-section h1 {
+    font-size: 2.2rem;
+  }
+  #projects h1 {
+    font-size: 2rem;
+  }
+  .projects-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav#navbar {
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0.7rem 1rem;
+    gap: 1rem;
+  }
+  #welcome-section {
+    padding-top: 4rem;
+    min-height: 90vh;
+    height: 90vh;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .project-tile img {
+    height: 160px;
+  }
+  .contact-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #contact {
+    padding: 2rem 0.5rem;
+  }
+}
+.contact-social {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-social a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.3rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  background: none;
+}
+
+.contact-social a i {
+  font-size: 1.7rem;
+  transition: color 0.2s;
+}
+
+.contact-social a:hover,
+.contact-social a:focus {
+  background: rgba(230, 126, 34, 0.12);
+  color: #e67e22;
+  transform: translateY(-2px) scale(1.06);
+}
+
+.contact-social a:hover i,
+.contact-social a:focus i {
+  color: #e67e22;
+}
+
+@media (max-width: 600px) {
+  .contact-social {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+
